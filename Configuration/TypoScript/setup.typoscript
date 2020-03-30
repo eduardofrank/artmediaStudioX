@@ -1,0 +1,132 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:yoast_news/Configuration/TypoScript/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:yoast_news/Configuration/TSconfig/Page.tsconfig">
+
+
+##############
+#### PAGE ####
+##############
+page {
+    includeCSS {
+        theme = EXT:artmediastudiox/Resources/Public/Scss/Theme/theme.scss
+        studio_layout = EXT:artmediastudiox/Resources/Public/Css/studio.css
+    }
+
+    includeJSLibs {
+
+    }
+
+    includeJS {
+
+    }
+
+    includeJSFooterlibs {
+
+    }
+
+    includeJSFooter {
+        artmediastudiox_scripts = EXT:artmediastudiox/Resources/Public/JavaScript/Dist/scripts.js
+    }
+}
+
+
+################################
+#### ADDED BY EDUARDO FRANK ####
+################################
+config.admPanel = 0
+config.contentObjectExceptionHandler = 0
+
+#### MENU SWITCH TO GALLERY ###
+lib.myswitch = TEXT
+lib.myswitch.value = 7
+
+lib.switchstyle = TEXT
+lib.switchstyle.value = /typo3conf/ext/artmediastudiox/Resources/Public/Images/G.svg
+
+#### FORM CONFIGURATION ###
+plugin.tx_form.settings.yamlConfigurations.100 = EXT:artmediastudio9/Configuration/Yaml/FormSetup.yaml
+module.tx_form.settings.yamlConfigurations.100 = EXT:artmediastudio9/Configuration/Yaml/FormSetup.yaml
+
+#### NEWS ####
+plugin.tx_news {
+    settings {
+        overrideFlexformSettingsIfEmpty = cropMaxCharacters,dateField,timeRestriction,orderBy,orderDirection,backPid,listPid,startingpoint,recursive,list.paginate.itemsPerPage    
+        orderBy = datetime
+        orderDirection = desc
+        orderByRespectTopNews = 0
+        orderByAllowed = sorting,author,uid,title,teaser,author,tstamp,crdate,datetime,categories.title  
+        link {
+            skipControllerAndAction = 1
+        }
+    }
+}
+
+
+plugin.tx_seo.config {
+  xmlSitemap {
+    sitemaps {
+      blog {
+        provider = TYPO3\CMS\Seo\XmlSitemap\RecordsXmlSitemapDataProvider
+        config {
+          table = tx_news_domain_model_news
+          sortField = sorting
+          lastModifiedField = tstamp
+          pid = 90
+          recursive = 2
+          url {
+            pageId = 9
+            fieldToParameterMap {
+              uid = tx_news_pi1[news]
+            }
+            additionalGetParameters {
+              tx_news_pi1.controller = News
+              tx_news_pi1.action = detail
+            }
+            useCacheHash = 1
+          }
+        }
+      }
+    }
+  }
+}
+
+
+[globalVar = TSFE:id=32]
+     plugin.tx_news.settings.detail.errorHandling = redirectToPage,9,404
+[global]
+
+
+page {
+    10 = FLUIDTEMPLATE
+    10 {
+	dataProcessing {
+                30 {
+                special = rootline
+                special.range = 1|-1
+                includeNotInMenu = 1
+                as = breadcrumb
+                if {
+                    value = {$page.theme.breadcrumb.enableLevel}
+                    value {
+                        insertData = 1
+                        prioriCalc = 1
+                        stdWrap.wrap = |-1
+                    }
+                    isGreaterThan {
+                        data = level
+                    }
+                }
+                dataProcessing {
+                    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                    10 {
+                        references.fieldName = nav_icon
+                        as = icon
+                    }
+                }
+            }
+        }
+    }
+}

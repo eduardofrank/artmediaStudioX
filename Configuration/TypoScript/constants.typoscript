@@ -1,0 +1,68 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/constants.typoscript">
+
+
+############
+### PAGE ###
+############
+page {
+    logo {
+        file = EXT:artmediastudiox/Resources/Public/Images/logo.svg
+        fileInverted = EXT:artmediastudiox/Resources/Public/Images/logo-inverted.svg
+        height = 109
+        width = 184
+        alt = artmediastudioX
+        linktitle = artmediastudioX
+    }
+    favicon {
+        file = EXT:artmediastudiox/Resources/Public/Icons/favicon.ico
+    }
+    fluidtemplate {
+        layoutRootPath = EXT:artmediastudiox/Resources/Private/Layouts/Page/
+        partialRootPath = EXT:artmediastudiox/Resources/Private/Partials/Page/
+        templateRootPath = EXT:artmediastudiox/Resources/Private/Templates/Page/
+    }
+}
+
+
+##################
+### EXTENSIONS ###
+##################
+plugin.bootstrap_package {
+    view {
+        layoutRootPath = EXT:artmediastudiox/Resources/Private/Layouts/
+        partialRootPath = EXT:artmediastudiox/Resources/Private/Partials/
+        templateRootPath = EXT:artmediastudiox/Resources/Private/Templates/
+    }
+}
+
+
+########################
+### CONTENT ELEMENTS ###
+########################
+plugin.bootstrap_package_contentelements {
+    view {
+        layoutRootPath = EXT:artmediastudiox/Resources/Private/Layouts/ContentElements/
+        partialRootPath = EXT:artmediastudiox/Resources/Private/Partials/ContentElements/
+        templateRootPath = EXT:artmediastudiox/Resources/Private/Templates/ContentElements/
+    }
+}
+
+################################
+#### ADDED BY EDUARDO FRANK ####
+################################
+plugin.bootstrap_package.settings.scss.grid-float-breakpoint = 9999px
+page.logo.alt = Artmedia Studio
+page.logo.linktitle = Artmedia Studio
+plugin.bootstrap_package.settings.scss.body-bg = #000
+plugin.tx_news.view.twb.templateRootPath = EXT:artmediastudiox/Resources/Private/Templates/Styles/Twb/Templates
+plugin.tx_news.view.twb.partialRootPath = EXT:artmediastudiox/Resources/Private/Templates/Styles/Twb/Partials/
+plugin.tx_news.view.twb.layoutRootPath = EXT:artmediastudiox/Resources/Private/Templates/Styles/Twb/Layouts/
+page.preloader.enable = 0
+page.theme.meta.enable = 0
+page.theme.socialmedia.enable = 0
+plugin.bootstrap_package.settings.scss.primary = #7c939b
+plugin.bootstrap_package.settings.scss.secondary = #98adb4
+
