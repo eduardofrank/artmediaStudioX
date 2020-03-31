@@ -11,9 +11,9 @@ page {
     logo {
         file = EXT:artmediastudiox/Resources/Public/Images/logo.svg
         fileInverted = EXT:artmediastudiox/Resources/Public/Images/logo-inverted.svg
-        height = 109
-        width = 184
-        alt = artmediastudioX
+        height = 114
+        width = 193
+        alt = artmedia studio
         linktitle = artmediastudioX
     }
     favicon {
@@ -63,6 +63,6 @@ plugin.tx_news.view.twb.layoutRootPath = EXT:artmediastudiox/Resources/Private/T
 page.preloader.enable = 0
 page.theme.meta.enable = 0
 page.theme.socialmedia.enable = 0
-plugin.bootstrap_package.settings.scss.primary = #7c939b
-plugin.bootstrap_package.settings.scss.secondary = #98adb4
+plugin.bootstrap_package.settings.scss.primary = #e1c91c
+plugin.bootstrap_package.settings.scss.secondary = #e7e7e7
 

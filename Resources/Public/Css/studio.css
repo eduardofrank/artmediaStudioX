@@ -1,10 +1,19 @@
+:root {
+    --body-bkgd-color:#000000;
+    --menu-bkgd-color:rgba(33, 33, 33, .85);
+    --menu-rollover-color:#e1c91c;
+    --menu-active-color:#e1c91c;
+    --menu-link-color:#ffffff;
+    --menu-button-color:#ffffff;
+}
+
 body, .body-bg {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
     margin: 0;
     padding: 0;
-    background-color: #000 !important;
+    background-color: var(--body-bkgd-color) !important;
 }
 
 /* centering of text in 404 page */
@@ -39,17 +48,13 @@ body, .body-bg {
 }
 
 .navbar-mainnavigation>.container>.navbar-collapse {
-    /*margin-left: -20px;
-    margin-right: -20px;
-    padding-left: 20px;
-    padding-right: 20px;*/
     position: absolute;
     right: -5000px;
     top: 130px;
     width: 0;
     height:auto;
     visibility:hidden;
-    background-color:#212121;
+    background-color:var(--menu-bkgd-color);
     z-index:-1;
     -webkit-transition: right .4s ease-in-out;
     -o-transition: right .4s ease-in-out;
@@ -63,7 +68,7 @@ body, .body-bg {
     top: 0;
     width: 215px;
     visibility: visible;
-    opacity:.95;
+    opacity:1;
     z-index:5;
 }
 
@@ -72,20 +77,20 @@ body, .body-bg {
     justify-content: flex-end;
     flex-wrap:no-wrap;
     padding-right:20px;
-    height:3rem;
+    height:3.1rem;
 }
 
 .nav-link-text {
-	color:#ffffff;
+	color:var(--menu-link-color);
 }
 
 a.nav-link:hover > .nav-link-text {
-  color:#e6ce1d;
+  color:var(--menu-rollover-color);
   clear:right;
 }
 
 .navbar-default .navbar-nav .active > .nav-link > .nav-link-text {
-    color:#e6ce1d;    
+    color:var(--menu-active-color);    
 }
 
 .navbar-mainnavigation .navbar-nav > li > .nav-link::before {
@@ -114,12 +119,12 @@ a.nav-link:hover > .nav-link-text {
     transform: rotate(0);
     top: -10px;
     width: 37px;
-    background-color:#fff;
+    background-color:var(--menu-button-color);
 }
 
 .navbar-toggler-icon {
     width: 37px;
-    background-color:#fff;
+    background-color:var(--menu-button-color);
 }
 
 .navbar-toggler.collapsed .navbar-toggler-icon::after {
@@ -127,7 +132,7 @@ a.nav-link:hover > .nav-link-text {
     transform: rotate(0);
     top: 10px;
     width: 37px;
-    background-color:#fff;
+    background-color:var(--menu-button-color);
 }
 
 .navbar-toggler-icon::after {
@@ -135,7 +140,7 @@ a.nav-link:hover > .nav-link-text {
     transform: rotate(45deg);
     top: 0;
     width: 37px;
-    background-color:#fff;
+    background-color:var(--menu-button-color);
 }
 
 .navbar-toggler-icon::before {
@@ -143,13 +148,14 @@ a.nav-link:hover > .nav-link-text {
     transform: rotate(-45deg);
     top: 0;
     width: 37px;
-    background-color:#fff;
+    background-color:var(--menu-button-color);
 }
 
 .navbar-mainnavigation .navbar-toggler {
     width: 22px;
     align-self: baseline;
-    margin-right: 10px
+    margin-right: 10px;
+    margin-top: 3px;
 }
 
 .navbar-mainnavigation .navbar-brand-image img {
@@ -160,16 +166,11 @@ a.nav-link:hover > .nav-link-text {
     max-height: unset;
 }
 
-.navbar-mainnavigation .nav-link-icon, .navbar-mainnavigation .nav-link-text {
-    display: inline-block;
-    vertical-align: middle;
-    color: #fff;
-}
-
 .switch {
     text-align: right;
+    padding-top:20px;
     padding-right: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
 }
 
 .switch-logo {
@@ -177,12 +178,15 @@ a.nav-link:hover > .nav-link-text {
     max-width: 55px;
 }
 
-.switch a:hover {
+.switch-logo:hover {
   margin:0;
   padding:0;
-  opacity:0.4;
+/*  filter: invert(.375) sepia(1) saturate(3.6) hue-rotate(11deg);*/
 }
 
+.st0:hover {
+    fill:var(--menu-rollover-color);
+}
 
 /****************************/
 /** BREADCRUMB NAVIGATION  **/

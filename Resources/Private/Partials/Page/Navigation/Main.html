@@ -28,8 +28,8 @@
                 <f:render partial="DropIn/Navigation/MainAfter" arguments="{_all}" />
 	            <div class="switch"> 
         	            <f:link.page pageUid="{f:cObject(typoscriptObjectPath: 'lib.myswitch')}"title="artmediaGallery">
-          		            <img class="switch-logo" src="{f:cObject(typoscriptObjectPath: 'lib.switchstyle')}">
-        	            </f:link.page> 
+                            <f:cObject typoscriptObjectPath="lib.switchstyle" />
+                        </f:link.page> 
 	            </div>
             </nav>
         </f:if>
