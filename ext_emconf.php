@@ -4,7 +4,7 @@
  * Extension Manager/Repository config file for ext "artmediastudiox".
  */
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'artmediastudioX',
+    'title' => 'artmediaStudioX',
     'description' => '',
     'category' => 'templates',
     'constraints' => [

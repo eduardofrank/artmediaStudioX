@@ -7,4 +7,4 @@ TYPO3:
         allowSaveToExtensionPaths: true
         allowDeleteFromExtensionPaths: true
         allowedExtensionPaths:
-          10: EXT:artmediastudio9/Resources/Private/Forms/
+          10: EXT:artmediastudiox/Resources/Private/Forms/
