@@ -4,7 +4,7 @@ defined('TYPO3_MODE') || die();
 /***************
  * Add default RTE configuration
  */
-$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['artmediastudiox'] = 'EXT:artmediastudiox/Configuration/RTE/Default.yaml';
+$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['artmediastudiox'] = 'EXT:artmediastudiox/Configuration/RTE/MyFull.yaml';
 
 /***************
  * PageTS

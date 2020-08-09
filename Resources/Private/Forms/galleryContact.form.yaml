@@ -1,3 +1,4 @@
+
 renderingOptions:
   submitButtonLabel: Submit
 type: Form
@@ -8,7 +9,7 @@ finishers:
   -
     options:
       subject: 'e-mail from web page'
-      recipientAddress: gady@artmediaus.com
+      recipientAddress: info@artmedia.gallery
       recipientName: 'Gady Alroy'
       senderAddress: '{text-3}'
       senderName: '{text-1}  {text-2}'

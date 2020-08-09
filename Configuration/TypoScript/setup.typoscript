@@ -10,6 +10,9 @@
 #### PAGE ####
 ##############
 page {
+    includeCSSLibs {
+        googlewebfont = https://fonts.googleapis.com/css?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900
+    }
     includeCSS {
         theme = EXT:artmediastudiox/Resources/Public/Scss/Theme/theme.scss
         studio_layout = EXT:artmediastudiox/Resources/Public/Css/studio.css
@@ -106,7 +109,7 @@ page {
                 30 {
                 special = rootline
                 special.range = 1|-1
-                includeNotInMenu = 1
+                includeNotInMenu = 0
                 as = breadcrumb
                 if {
                     value = {$page.theme.breadcrumb.enableLevel}
@@ -126,6 +129,77 @@ page {
                         as = icon
                     }
                 }
+            }
+        }
+    }
+}
+
+
+page.headerData.2020 = FLUIDTEMPLATE
+page.headerData.2020 {
+	file = EXT:artmediastudiox/Resources/Private/Templates/Favicons.html
+ 	extbase.controllerExtensionName = artmediastudiox
+}
+
+
+lib.contentElement.settings.responsiveimages.variants {
+    default {
+        breakpoint = 1200
+        width = 1100
+        sizes {
+            1\.5x {
+                multiplier = 1.5
+            }
+            2x {
+                multiplier = 2
+            }
+        }
+    }
+    large {
+        breakpoint = 992
+        width = 920
+        sizes {
+            1\.5x {
+                multiplier = 1.5
+            }
+            2x {
+                multiplier = 2
+            }
+        }
+    }
+    medium {
+        breakpoint = 768
+        width = 680
+        sizes {
+            1\.5x {
+                multiplier = 1.5
+            }
+            2x {
+                multiplier = 2
+            }
+        }
+    }
+    small {
+        breakpoint = 576
+        width = 500
+        sizes {
+            1\.5x {
+                multiplier = 1.5
+            }
+            2x {
+                multiplier = 2
+            }
+        }
+    }    
+    extrasmall {
+        breakpoint = unset
+        width = 374
+        sizes {
+            1\.5x {
+                multiplier = 1.5
+            }
+            2x {
+                multiplier = 2
             }
         }
     }
