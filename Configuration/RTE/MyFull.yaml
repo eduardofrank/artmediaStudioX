@@ -7,16 +7,27 @@ imports:
     - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
     - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
     - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+#    - { resource: "EXT:bootstrap_package/Configuration/RTE/Default.yaml" }
 
 # Add configuration for the editor
 # For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
 editor:
+  externalPlugins:
+      bootstrappackage_address:
+            resource: "EXT:bootstrap_package/Resources/Public/CKEditor/Plugins/Address/plugin.min.js"
+      bootstrappackage_box:
+            resource: "EXT:bootstrap_package/Resources/Public/CKEditor/Plugins/Box/plugin.min.js"
+      bootstrappackage_columns:
+            resource: "EXT:bootstrap_package/Resources/Public/CKEditor/Plugins/Columns/plugin.min.js"
+      bootstrappackage_indent:
+            resource: "EXT:bootstrap_package/Resources/Public/CKEditor/Plugins/Indent/plugin.min.js"
+      bootstrappackage_table:
+            resource: "EXT:bootstrap_package/Resources/Public/CKEditor/Plugins/Table/plugin.min.js"
   config:
     contentsCss: "EXT:bootstrap_package/Resources/Public/Css/bootstrap4-rte.min.css"
     # can be "default", but a custom stylesSet can be defined here, which fits TYPO3 best
     stylesSet:
       # block level styles
-      - { name: "Artmedia H2", element: "h2", styles: { color: "#000", background: "#fff", padding-left: "8px"  } }
       - { name: "Quote / Citation", element: "blockquote" }
       - { name: "Code block", element: "code" }
       # Inline styles
@@ -59,7 +70,7 @@ editor:
       - { name: "Warning", element: "span", attributes: { 'class': 'text-warning' } }
       - { name: "Danger", element: "span", attributes: { 'class': 'text-danger' } }
 
-    format_tags: "p;h1;h2;h3;pre"
+    format_tags: "p;h1;h2;h3;h4;h5;pre"
 
     toolbarGroups:
       - { name: clipboard, groups: [clipboard, undo] }
@@ -94,6 +105,11 @@ editor:
       - autolink
       - wordcount
       - colorbutton
+      - bootstrappackage_address
+      - bootstrappackage_box
+      - bootstrappackage_columns
+      - bootstrappackage_indent
+      - bootstrappackage_table
 
     removePlugins:
       - image
