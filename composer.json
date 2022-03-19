@@ -10,7 +10,7 @@
         "TYPO3 CMS"
     ],
     "require": {
-        "bk2k/bootstrap-package": "^10.0 || ^11.0"
+        "bk2k/bootstrap-package": "^10.0 || ^11.0 || ^12.0"
     },
     "autoload": {
         "psr-4": {
